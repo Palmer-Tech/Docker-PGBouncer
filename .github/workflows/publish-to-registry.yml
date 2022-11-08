@@ -2,6 +2,9 @@ name: Publish to Registry
 on:
   release:
       types: [published]
+
+env:
+  RELEASE_VERSION: ${{github.event.release.name}}
 jobs:
   update:
     runs-on: ubuntu-latest
