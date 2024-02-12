@@ -1,9 +1,9 @@
 FROM alpine:3.16 AS build_stage
 
-ARG PGBOUNCER_VERSION=1.19.0
+ARG PGBOUNCER_VERSION=1.22.0
 WORKDIR /
 RUN apk --update add build-base automake libtool m4 autoconf libevent-dev openssl-dev c-ares-dev
-RUN wget https://github.com/pgbouncer/pgbouncer/releases/download/pgbouncer_1_19_0/pgbouncer-${PGBOUNCER_VERSION}.tar.gz \
+RUN wget https://github.com/pgbouncer/pgbouncer/releases/download/pgbouncer_1_22_0/pgbouncer-${PGBOUNCER_VERSION}.tar.gz \
   && tar zxf pgbouncer-${PGBOUNCER_VERSION}.tar.gz && rm pgbouncer-${PGBOUNCER_VERSION}.tar.gz \
   && cd /pgbouncer-${PGBOUNCER_VERSION} \
   && ./configure --prefix=/pgbouncer \
